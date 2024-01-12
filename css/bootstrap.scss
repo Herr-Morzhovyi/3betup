@@ -1,0 +1,207 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../bootstrap-5.3.2/scss/functions";
+
+// 2. Include any default variable overrides here
+$spacer: 0.625rem;
+$btn-border-radius: 0;
+$grid-gutter-width: 2.5rem;
+$font-family-sans-serif: 'Inter', sans-serif;
+$accordion-border-width: 0;
+$accordion-border-radius: 0;
+
+// Colors
+$midnight-blue:    #151531;
+$dark-indigo:      #1c1b43;
+$deep-blue:        #21215e;
+$sky-blue:         #1885e9;
+$light-cornflower: #5c67ed;
+$pale-lavender:    #A4AAF8;
+$royal-purple:     #4b0d64;
+$navy-blue:        #343374;
+$tangerine:        #E16701;
+$fire-engine-red:  #FF0000;
+$white:            #ffffff;
+
+// Override the bootstrap default color names
+
+
+// Override other bootstrap variables, which include colors
+// $body-color: $dark;
+$body-line-height: 1.5;
+$input-btn-focus-box-shadow: none;
+$input-btn-focus-width: 0;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../bootstrap-5.3.2/scss/variables";
+@import "../bootstrap-5.3.2/scss/variables-dark";
+
+// 4. Include any default map overrides here
+
+// Colors
+$theme-colors: (
+    "midnight-blue": $midnight-blue,
+    "dark-indigo": $dark-indigo,
+    "deep-blue": $deep-blue,
+    "sky-blue": $sky-blue,
+    "light-cornflower": $light-cornflower,
+    "pale-lavender": $pale-lavender,
+    "royal-purple": $royal-purple,
+    "navy-blue": $navy-blue,
+    "tangerine": $tangerine,
+    "fire-engine-red": $fire-engine-red,
+    "white": $white
+);
+
+$colors: (
+    "midnight-blue": $midnight-blue,
+    "dark-indigo": $dark-indigo,
+    "deep-blue": $deep-blue,
+    "sky-blue": $sky-blue,
+    "light-cornflower": $light-cornflower,
+    "pale-lavender": $pale-lavender,
+    "royal-purple": $royal-purple,
+    "navy-blue": $navy-blue,
+    "tangerine": $tangerine,
+    "fire-engine-red": $fire-engine-red,
+    "white": $white
+);
+
+// Spacers
+$spacers: (
+	0: 0,
+	10: $spacer * 1, // 10px
+	15: $spacer * 1.5, // 15px
+	20: $spacer * 2, // 20px
+	25: $spacer * 2.5, // 25px 
+	30: $spacer * 3, // 30px
+	35: $spacer * 3.5, // 35px 
+	40: $spacer * 4, // 40px
+	45: $spacer * 4.5, // 45px
+	50: $spacer * 5, // 50px
+	55: $spacer * 5.5, // 55px
+	60: $spacer * 6, // 60px
+    65: $spacer * 6.5, // 65px
+	70: $spacer * 7, // 70px
+	80: $spacer * 8, // 80px
+	90: $spacer * 9, // 90px
+	100: $spacer * 10, // 100px
+    120: $spacer * 12,
+    150: $spacer * 15,
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1600px
+);
+
+// Containers
+$container-max-widths: (
+  sm:  100%,
+  md:  100%,
+  lg:  100%,
+  xl:  1200px,
+  xxl: 1400px,
+  xxxl: 1600px
+);
+
+// Text sizes
+$font-sizes: (
+   14 : 14px,
+   16 : 16px,
+   18 : 18px,
+   20 : 20px,
+   22 : 22px,
+   24 : 24px,
+   25 : 25px,
+   27 : 27px,
+   28 : 28px,
+   30 : 30px,
+   32 : 32px,
+   37 : 37px,
+   48 : 48px,
+);
+
+$utilities: (
+    "font-size": (
+        responsive: true,
+        property: font-size,
+        class: fs,
+        values: map-merge($font-sizes, (inherit: inherit))
+    )
+);
+
+$aspect-ratios: (
+  "1x1" : calc(1 / 1 * 100%),
+  "2x1" : calc(1 / 2 * 100%),
+  "2x3" : calc(3 / 2 * 100%),
+  "3x2" : calc(2 / 3 * 100%),
+  "4x3" : calc(3 / 4 * 100%),
+  "16x9" : calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%)
+);
+
+// 5. Include remainder of required parts
+@import "../bootstrap-5.3.2/scss/maps";
+@import "../bootstrap-5.3.2/scss/mixins";
+@import "../bootstrap-5.3.2/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../bootstrap-5.3.2/scss/tables";
+@import "../bootstrap-5.3.2/scss/forms";
+@import "../bootstrap-5.3.2/scss/buttons";
+@import "../bootstrap-5.3.2/scss/transitions";
+@import "../bootstrap-5.3.2/scss/dropdown";
+@import "../bootstrap-5.3.2/scss/button-group";
+@import "../bootstrap-5.3.2/scss/nav";
+@import "../bootstrap-5.3.2/scss/navbar";
+@import "../bootstrap-5.3.2/scss/card";
+@import "../bootstrap-5.3.2/scss/accordion";
+@import "../bootstrap-5.3.2/scss/breadcrumb";
+@import "../bootstrap-5.3.2/scss/pagination";
+@import "../bootstrap-5.3.2/scss/badge";
+@import "../bootstrap-5.3.2/scss/alert";
+@import "../bootstrap-5.3.2/scss/progress";
+@import "../bootstrap-5.3.2/scss/list-group";
+@import "../bootstrap-5.3.2/scss/close";
+@import "../bootstrap-5.3.2/scss/toasts";
+@import "../bootstrap-5.3.2/scss/modal";
+@import "../bootstrap-5.3.2/scss/tooltip";
+@import "../bootstrap-5.3.2/scss/popover";
+@import "../bootstrap-5.3.2/scss/carousel";
+@import "../bootstrap-5.3.2/scss/spinners";
+@import "../bootstrap-5.3.2/scss/offcanvas";
+@import "../bootstrap-5.3.2/scss/placeholders";
+
+
+@import "../bootstrap-5.3.2/scss/utilities";
+@import "../bootstrap-5.3.2/scss/reboot";
+@import "../bootstrap-5.3.2/scss/type";
+@import "../bootstrap-5.3.2/scss/images";
+@import "../bootstrap-5.3.2/scss/containers";
+@import "../bootstrap-5.3.2/scss/grid";
+@import "../bootstrap-5.3.2/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../bootstrap-5.3.2/scss/utilities/api";
+
+// 8. Add additional custom code here
+
+// Background-size settings
+.bg-cover {
+	background: center no-repeat;
+	background-size: cover;
+}
+
+.bg-contain {
+	background: center no-repeat;
+	background-size: contain;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}

@@ -1,0 +1,374 @@
+/*
+Theme Name: 3betup
+Theme URI: http://www.andrewstech.tech/
+Author: Andrejs Fokins
+Author URI: http://www.andrewstech.tech/
+Description: 3betup Wordpress theme
+Version: 0.0.1
+Tags: 3betup
+Text Domain: 3betup
+*/
+/**
+ * Reset CSS instead of Normalize inside of Bootstrap
+*/
+
+/* Page commons */ 
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--wp-edit-button-primary: var(--bs-primary);
+}
+
+p:first-child {
+	margin-top: 0;
+}
+  
+p:last-child {
+	margin-bottom: 0;
+}
+
+a:not(.text-decoration-none):hover {
+	text-decoration: none;
+}
+
+body {
+	background-color: var(--bs-midnight-blue);
+	font-family: 'Poppins', sans-serif;
+}
+
+header {
+	padding: 0 67.7px;
+}
+
+.fw-black {
+	font-weight: 800;
+}
+
+.font-jost {
+	font-family: 'Jost', sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+	header {
+		padding: 0 20px;
+	}
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.h-100vh {
+	height: 100vh;
+}
+
+@media screen and (max-height: 800px) {
+	.h-100vh {
+		min-height: 100vh;
+		height: auto;
+	}
+}
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	margin: auto;
+	display: block;
+}
+
+.position-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+// * 404 page css
+.text-404 {
+	font-size: 300px;
+	letter-spacing: 10px;
+    line-height: 0.57;
+}
+
+#a404-2 {
+	transform-origin: bottom;
+	animation-name: rotate2;
+	animation-duration: 1.2s;
+	animation-fill-mode: forwards;
+	animation-delay: 3s;
+	animation-iteration-count: 1;
+	z-index: -1;
+
+}
+
+@keyframes rotate2 {
+	0% {
+		transform: rotate(0deg);
+		animation-timing-function: cubic-bezier(0.77, .24, .26, 1);
+	}
+	60% {
+		transform: rotate(220deg);
+		animation-timing-function: cubic-bezier(0.77, .24, .26, 1.81);
+	}
+	100% {
+		transform: rotate(180deg);
+	}
+}
+
+@media (max-width: 991px) {
+	.text-404 {
+		font-size: 200px;
+	}
+}
+
+@media (max-width: 767px) {
+	.text-404 {
+		font-size: 100px;
+	}
+}
+
+.casino-card {
+	box-shadow: none;
+	transition: box-shadow .2s ease-in-out;
+	border-radius: 10px;
+	&:hover {
+		box-shadow: 4px 4px 14px 14px rgba(2, 2, 49, 0.25);
+	}
+}
+
+
+.star-rating {
+	img {
+		height: 13px;
+	}
+	&-recomended {
+		img {
+			height: 20px;
+		}
+	}
+}
+
+
+.casino-link-btn {
+	color: var(--bs-midnight-blue);
+	text-decoration: none;
+	padding: 10px 24px;
+	text-align: center;
+	border-radius: 20px;
+	background-color: var(--bs-tangerine);
+	font-size: 14px;
+	font-weight: 700;
+	display: inline-block;
+	white-space: nowrap;
+	transition: background-color .2s ease-in-out;
+	&:hover {
+		background-color: #FC9743;
+	}
+}
+
+.show-payment-methods-btn {
+	border: none;
+	background-color: transparent;
+	outline: none;
+	text-decoration: none;
+	color: var(--bs-sky-blue);
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.payment-method {
+	padding: 7px 5px;
+	width: 75px;
+	height: 30px;
+	border-radius: 32px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	img {
+		width: 65px;
+		height: 20px;
+	}
+}
+
+.recomended-casinos-see-more-btn {
+	border: none;
+	outline: none;
+	border-radius: 40px;
+	padding: 10px 30px;
+	background-color: var(--bs-light-cornflower);
+	color: white;
+	font-size: 18px;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.contact-form-modal-launch-button {
+	background-color: transparent;
+	outline: none;
+	border: 2px solid var(--bs-light-cornflower);
+	border-radius: 47px;
+	padding: 13px 36px;
+	color: white;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+footer .footer_text a {
+	color: #A4AAF8;
+	text-decoration: none;
+}
+
+#subscriptionForm {
+	position: relative;
+	input[type="email"] {
+		background: white;
+		border: none;
+		border-radius: 51px;
+		padding: 13px 27px;
+		font-weight: 500;
+	}
+	button {
+		position: absolute;
+		right: 9px;
+		background-color: #F7780F;
+		border: none;
+		padding: 11px 38px;
+		border-radius: 51px;
+		top: 2px;
+		color: #151531;
+		font-weight: 500;
+	}
+}
+
+.modal-dialog {
+	max-width: 948px !important;
+}
+
+.modal-content {
+	background-color: var(--bs-midnight-blue);
+	border-radius: 37px;
+	form {
+		input, textarea {
+			display: block;
+			max-width: 100%;
+			&:focus-visible {
+				outline: none;
+			}
+		}
+		input:not([type="submit"]) {
+			height: 50px;
+			width: 100%;
+			background-color: var(--bs-navy-blue);
+			border-radius: 44px;
+			border: none;
+			padding: 11px 27px;
+			color: white;
+			transition: color .3s ease-in-out;
+			&.wpcf7-not-valid {
+				color: red;
+			}
+		}
+		textarea {
+			width: 100%;
+			background-color: var(--bs-navy-blue);
+			border-radius: 26px;
+			border: none;
+			padding: 25px 27px;
+			color: white;
+			
+		}
+		input[type="submit"] {
+			background-color: var(--bs-light-cornflower);
+			border: none;
+			color: white;
+			border-radius: 40px;
+			padding: 10px 30px;
+			font-weight: 600;
+			font-size: 18px;
+			box-shadow: 0px 1.5px 4px rgba(92, 103, 237, .4);
+			transition: box-shadow .3s ease-in-out;
+			&:hover {
+				box-shadow: 0px 3px 8px rgba(92, 103, 237, .8);
+			}
+		}
+		span.wpcf7-form-control-wrap {
+			margin-bottom: 25px;
+			display: block;
+		}
+		.wpcf7-not-valid-tip {
+			padding-left: 27px;
+		}
+	}
+}
+
+.section-links-btn {
+	color: white;
+	font-size: 18px;
+	font-weight: 600;
+	padding: 10px 16px;
+	border: 2px solid #F7780F;
+	border-radius: 30px;
+	text-decoration: none;
+}
+
+#bonuses .bonus-card {
+	background-color: var(--bs-dark-indigo);
+	border-radius: 10px;
+	max-height: 300px;
+	padding: 16px;
+}
+
+.claim-bonus-btn {
+	padding: 12px 24px;
+	color: white;
+	text-decoration: none;
+	font-size: 14px;
+	font-weight: 700;
+	background-color: var(--bs-navy-blue);
+	border-radius: 32px;
+	display: inline-block;
+}
+
+.tournament-card {
+	background-color: var(--bs-dark-indigo);
+	border-radius: 10px;
+	padding: 16px;
+}
+
+.tournament-btn {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	color: white;
+	background-color: var(--bs-royal-purple);
+	border-radius: 94px;
+	font-weight: 600;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.success-message {
+	display: none;
+}
+
+.wpcf7-spinner {
+	display: none !important;
+}
