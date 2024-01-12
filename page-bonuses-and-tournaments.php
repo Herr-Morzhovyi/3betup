@@ -17,6 +17,16 @@ get_header();
 					<a href="#tournaments" class="section-links-btn"><?php _e('Tournaments', '3betup'); ?></a>
 				</div>
 			</div>
+			<div class="col-6">
+				<div class="d-flex flex-column justify-content-end align-items-end h-100">
+					<button type="button" class="btn btn-filter" data-bs-toggle="modal" data-bs-target="#filterModal">
+						<span><?php
+							_e('Casino Filter', '3betup');
+						?></span>
+						<img src="<?php echo get_template_directory_uri(  ) . '/images/filter.svg'; ?>" alt="">
+					</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
@@ -97,6 +107,22 @@ get_header();
 		</div>
 	</div>
 </section>
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><?php _e('Choose casino(s)', '3betup'); ?></h1>
+        <button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close">
+			<img src="<?php echo get_template_directory_uri() . '/images/close.svg'; ?>" alt="">
+		</button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 	// * Bonuses script
 	new Vue({

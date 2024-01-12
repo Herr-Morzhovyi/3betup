@@ -372,3 +372,48 @@ footer .footer_text a {
 .wpcf7-spinner {
 	display: none !important;
 }
+
+.btn-filter {
+	background-color: #343374;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	gap: 150px;
+	padding: 15px 16px;
+	transition: all .3s ease-in-out;
+	span {
+		color: white;
+		font-weight: 600;
+		font-size: 20px;
+	}
+	&:hover {
+		background-color: #1c1b43;
+	}
+}
+
+#filterModal {
+	.modal-content {
+		border-radius: 8px;
+		.modal-header {
+			justify-content: center;
+			padding: 16px;
+			background-color: #343374;
+			border: none;
+			h1 {
+				color: white;
+				text-align: center;
+				font-weight: 600;
+				font-size: 18px;
+			}
+			button {
+				position: absolute;
+				margin: 0;
+				right: 0;
+			}
+		}
+		.modal-body {
+			background-color: #403f8e;
+			border-radius: 0 0 8px 8px;
+		}
+	}
+}
