@@ -28,7 +28,7 @@ get_header();
 
 				?></div>
 			</div>
-			<div class="col-6 position-relative"><?php
+			<div class="col-xxl-6 d-none d-xxl-block position-relative"><?php
 				echo wp_get_attachment_image( get_field('banner_image')['ID'], 'post-thumbnail', false, [
 					'class' => 'w-100 h-auto'
 				] );
@@ -308,45 +308,11 @@ get_header();
 </section>
 <script>
 	$ = jQuery;
-	// new Vue({
-	// 	el: '#recomendedCasinos',
-	// 	data: {
-	// 		initialCasinoCount: 4,
-	// 		casinos: [],
-	// 		// expanded: true
-	// 	},
-	// 	created: function () {
-	// 		this.getCasinos();
-	// 	},
-	// 	computed: {
-	// 		displayedCasinos: function () {
-	// 			return this.casinos;
-	// 		},
-	// 	},
-	// 	methods: {
-	// 		getCasinos: function () {
-
-	// 			this.casinos = <?php // echo $recomended_casinos_json; ?>;
-
-	// 			// const endpoint = '/wp-json/wp/v2/casino?per_page=99';
-
-	// 			// fetch(endpoint)
-	// 			// 	.then(response => response.json())
-	// 			// 	.then(posts => {
-	// 			// 		this.casinos = posts;
-	// 			// 	})
-	// 			// 	.catch(error => {
-	// 			// 		console.error(error);
-	// 			// 	});
-	// 		}
-	// 	}
-	// });
 	new Vue({
 		el: '#recomendedCasinos',
 		data: {
 			initialCasinoCount: 4,
 			casinos: [],
-			// expanded: true
 		},
 		created: function () {
 			this.getCasinos();
@@ -358,8 +324,6 @@ get_header();
 		},
 		methods: {
 			getCasinos: function () {
-
-				// this.casinos = <?php echo $recomended_casinos_json; ?>;
 
 				const endpoint = '/wp-json/wp/v2/casino?per_page=99';
 
