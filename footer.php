@@ -1,13 +1,16 @@
 <footer class="bg-dark-indigo">
 	<div class="container pt-25 pb-50">
 		<div class="row">
-			<div class="col-4 text-white">
-				Menu
-				<?PHP // tODO ?>
-				<a href="<?php echo get_home_url(  ); ?>">Home</a>
-				<a href="<?php echo get_post_type_archive_link( 'casino' ); ?>">Casinos</a>
-				<a href="https://3betup.andrewstech.tech/bonuses-and-tournaments/">Bonuses&Tournaments</a>
-			</div>
+			<div class="col-4 text-white d-flex flex-column align-items-start gap-20 footer-menu"><?php
+				if (has_nav_menu('primary')) {
+
+					$menu_items = wp_get_nav_menu_items(wp_get_nav_menu_object(get_nav_menu_locations()['primary']));
+					_wp_menu_item_classes_by_context($menu_items);
+				
+					show_nav_menu_items(0, $menu_items, 'primary');
+				
+				}
+			?></div>
 			<div class="col-4">
 				<div class="text-white mb-30 footer_text"><?php
 					echo get_field('footer_text', 'option');

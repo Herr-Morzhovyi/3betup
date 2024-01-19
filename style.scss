@@ -413,7 +413,55 @@ footer .footer_text a {
 		}
 		.modal-body {
 			background-color: #403f8e;
-			border-radius: 0 0 8px 8px;
+			& > div > div:not(:last-child) {
+				border-bottom: 1px solid #4E4CAF;
+			}
+			
 		}
+		.modal-footer {
+			border-radius: 0 0 8px 8px;
+			background-color: #343374;
+			border-top: none;
+			.modal-btn {
+				padding: 12px 24px;
+				background-color: #403F8E;
+				border-radius: 32px;
+				border: none;
+				outline: none;
+				color: white;
+				font-size: 14px;
+				font-weight: 700;
+			}
+		}
+	}
+}
+.filterCount {
+	border-radius: 15px;
+	padding: 4px 8px;
+	display: inline-flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
+	background-color: #1C1B43;
+	opacity: 0;
+	width: 40px;
+	&:has(span) {
+		opacity: 1;
+	}
+	span {
+		color: white;
+		font-weight: 600;
+		font-size: 14px;
+	}
+}
+
+.current-menu-item a {
+	color: #A4AAF8 !important;
+	font-weight: 700;
+}
+
+.footer-menu {
+	.primary-menu {
+		flex-direction: column !important;
 	}
 }

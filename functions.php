@@ -323,7 +323,7 @@ function add_acf_image_array_to_rest_api() {
 function get_acf_image_array($object, $field_name, $request) {
     $post_id = $object['id'];
     
-    $image_url = wp_get_attachment_image_src(get_field('associated_casino', $post_id)['ID'], 'post-thumnail', false );
+    $image_url = wp_get_attachment_image_src(get_field('associated_casino_logo', $post_id)['ID'], 'post-thumnail', false );
     
     return $image_url;
 
