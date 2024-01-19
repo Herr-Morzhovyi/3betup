@@ -241,6 +241,7 @@ footer .footer_text a {
 
 #subscriptionForm {
 	position: relative;
+	max-width: 100%;
 	@media screen and (max-width: 767px) {
 		width: 350px !important;
 	}
@@ -254,6 +255,7 @@ footer .footer_text a {
 		@media screen and (max-width: 767px) {
 			max-width: 100%;
 			width: 350px !important;
+			min-width: 100%;
 		}
 	}
 	button {
