@@ -1,7 +1,7 @@
 <footer class="bg-dark-indigo">
 	<div class="container pt-25 pb-50">
-		<div class="row">
-			<div class="col-4 text-white d-flex flex-column align-items-start gap-20 footer-menu"><?php
+		<div class="row gy-md-40 gy-50">
+			<div class="col-xxl-4 col-12 text-white d-flex justify-content-center align-items-start gap-20 footer-menu"><?php
 				if (has_nav_menu('primary')) {
 
 					$menu_items = wp_get_nav_menu_items(wp_get_nav_menu_object(get_nav_menu_locations()['primary']));
@@ -11,18 +11,18 @@
 				
 				}
 			?></div>
-			<div class="col-4">
-				<div class="text-white mb-30 footer_text"><?php
+			<div class="col-xxl-4 col-12 d-flex flex-xxl-column flex-md-row flex-column justify-content-between justify-content-xxl-start gap-md-30 gap-20 align-items-center align-items-xxl-start">
+				<div class="text-white footer_text text-center text-md-start"><?php
 					echo get_field('footer_text', 'option');
 				?></div>
 				<button type="button" data-bs-toggle="modal" data-bs-target="#contactFormModal" class="contact-form-modal-launch-button"><?php _e('Write direct message to us', '3betup'); ?></button>
 			</div>
-			<div class="col-3 offset-1">
-				<div class="text-white mb-30 text-wrap"><?php
+			<div class="col-xxl-3 offset-xxl-1 col-12 d-flex flex-xxl-column flex-md-row flex-column justify-content-between justify-content-xxl-start gap-md-30 gap-20 align-items-center align-items-xxl-start">
+				<div class="text-white mb-30 text-wrap flex-shrink-1 text-center text-md-start"><?php
 					echo get_field('footer_text_2', 'option');
 				?></div>
 				<form method="post" id="subscriptionForm">
-					<input type="email" name="email" placeholder="Enter your email" required>
+					<input type="email" name="email" placeholder="Enter your email" required class="w-100">
 					<button type="submit" value="Subscribe">Subscribe</button>
 				</form>
 			</div>
