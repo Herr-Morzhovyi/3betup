@@ -5,10 +5,10 @@ get_header();
 // * Banner section
 ?><section id="banner">
 	<div class="container">
-		<div class="row gx-120 align-items-center mt-10">
-			<div class="col-6">
-				<h1 class="fs-36 text-pale-lavender mb-10 fw-bold"><?php the_field('banner_title'); ?></h1>
-				<p class="fs-20 mb-40" style="color: #d4d3d3; line-heigth: 152.5%;"><?php echo strip_tags(get_field('banner_text')); ?></p>
+		<div class="row gx-xxl-120 align-items-center mt-10">
+			<div class="col-xxl-6 col-12 my-80 my-xxl-0">
+				<h1 class="fs-36 text-pale-lavender mb-10 fw-bold text-center text-xxl-start"><?php the_field('banner_title'); ?></h1>
+				<p class="fs-20 mb-40 text-center text-xxl-start" style="color: #d4d3d3; line-heigth: 152.5%;"><?php echo strip_tags(get_field('banner_text')); ?></p>
 				<div class="row"><?php
 
 					foreach ( get_field('banner_features') as $feature ) {
@@ -50,14 +50,21 @@ get_header();
 
 				foreach ($top_casinos as $casino_index => $casino) {
 
-					?><div class="col-6">
-						<div class="bg-dark-indigo p-25 casino-card" id="casino<?php echo $casino_index; ?>">
+					?><div class="col-xxl-6 col-12">
+						<div class="bg-dark-indigo p-sm-25 p-0 casino-card" id="casino<?php echo $casino_index; ?>">
 							<div class="row gx-25">
-								<div class="col-3 d-flex flex-column justify-content-between align-items-center">
+								<div class="col-md-3 col-4 d-flex flex-column justify-content-between align-items-center">
 									<div class="w-100"><?php
 
 										// * Logo
-										?><div class="ratio ratio-1x1 mb-15" style="background-color: #323082; border-radius: 10px;">
+										?><div class="ratio ratio-1x1 mb-15 d-none d-sm-block" style="background-color: #323082; border-radius: 10px;">
+											<div class="position-cover d-flex align-items-center justify-content-center"><?php
+												echo get_the_post_thumbnail( $casino, 'post-thumbnail', [
+													'style' => 'max-width: 72px; max-height: 72px;'
+												] );
+											?></div>
+										</div>
+										<div class="ratio ratio-1x2 mb-15 d-block d-sm-none" style="background-color: #323082; border-radius: 10px 0 0 0;">
 											<div class="position-cover d-flex align-items-center justify-content-center"><?php
 												echo get_the_post_thumbnail( $casino, 'post-thumbnail', [
 													'style' => 'max-width: 72px; max-height: 72px;'
@@ -71,7 +78,7 @@ get_header();
 										$full_stars = floor($rounded_rating / 2);
 										$half_star = ($rounded_rating % 2 != 0);
 
-										?><div class="w-100 d-flex justify-content-between align-items-center">
+										?><div class="w-100 d-flex justify-content-between align-items-sm-center flex-column flex-sm-row">
 											<span class="text-white fw-semibold px-10"><?php echo $rating . '/10'; ?></span><?php
 
 											// Stars
@@ -90,9 +97,9 @@ get_header();
 												}
 
 											?></div>
-										</div>
+										</div>	
 									</div>
-									<div class="mt-15 w-100">
+									<div class="mt-15 w-100 d-none d-sm-block">
 										<a class="casino-link-btn" href="<?php echo get_field('casino_link', $casino->ID); ?>"><?php _e('Visit casino', '3betup'); ?></a>
 									</div>
 								</div>
@@ -100,8 +107,8 @@ get_header();
 
 
 
-								<div class="col-9">
-									<h3 class="text-white fs-18 fw-medium mb-15"><?php
+								<div class="col-md-9 col-8 pt-10 pe-20">
+									<h3 class="text-white fs-sm-18 fs-16 fw-medium mb-15"><?php
 										_e('About ', '3betup');
 										echo get_the_title($casino);
 										_e(' Casino', '3betup');
@@ -120,7 +127,7 @@ get_header();
 																'style' => 'width: 24px; heigth: 24px; margin-right: 5px;'		
 															] );
 														?>
-														<div class="" style="color: #cfcfcf;"><?php echo $feature['text']; ?></div>
+														<div class="fs-sm-16 fs-14" style="color: #cfcfcf;"><?php echo $feature['text']; ?></div>
 													</div><?php
 		
 												}
@@ -146,6 +153,9 @@ get_header();
 											<img :src="image.url" :alt="image.alt">
 										</div>
 									</div>
+								</div>
+								<div class="my-20 col-12 w-100 d-block d-sm-none px-20">
+									<a class="casino-link-btn w-100" href="<?php echo get_field('casino_link', $casino->ID); ?>"><?php _e('Visit casino', '3betup'); ?></a>
 								</div>
 							</div>
 						</div>
@@ -204,7 +214,7 @@ get_header();
 </section>
 <section id="recomendedCasinos">
 	<div class="container mb-80">
-		<h2 class="text-center text-white fs-24 fw-semibold mb-30"><?php the_field('recomended_casinos_title'); ?></h2><?php
+		<h2 class="text-center text-white fs-md-24 fs-sm-20 fs-18 fw-semibold mb-30"><?php the_field('recomended_casinos_title'); ?></h2><?php
 
 			$recomended_casinos = get_field('recomended_casinos');
 			$recomended_casinos_json = json_encode($recomended_casinos);
@@ -213,11 +223,16 @@ get_header();
 
 				foreach ($recomended_casinos as $casino) {
 
-					?><div class="row mb-25 align-items-center">
-						<div class="col-2">
+					?><div class="row mb-25 align-items-center gy-10">
+						<div class="col-md-2 col-sm-6 col-12">
 							<div class="d-flex align-items-center">
 								
-								<div style="width: 80px; margin-right: 10px;">
+								<div style="width: 80px;" class="me-10 d-sm-block d-none">
+									<a href="<?php echo get_field('casino_link', $casino->ID); ?>">
+										<img src="<?php echo get_the_post_thumbnail_url( $casino, 'post-thumbnail' ); ?>" alt="" style="height: 40px; width: auto;">
+									</a>
+								</div>
+								<div class="d-block d-sm-none me-10">
 									<a href="<?php echo get_field('casino_link', $casino->ID); ?>">
 										<img src="<?php echo get_the_post_thumbnail_url( $casino, 'post-thumbnail' ); ?>" alt="" style="height: 40px; width: auto;">
 									</a>
@@ -225,8 +240,8 @@ get_header();
 								<h3 class="fs-16 text-white fw-semibold"><?php echo get_the_title($casino); ?></h3>
 							</div>
 						</div>
-						<div class="col-2 offset-1">
-							<div class="w-100 d-flex align-items-center">
+						<div class="col-md-2 offset-md-1 col-sm-6 col-12">
+							<div class="w-100 d-flex align-items-center justify-content-md-start justify-content-sm-end justify-content-start">
 								<span class="text-white fw-semibold px-10"><?php echo get_field('rating', $casino->ID); ?>/10</span><?php
 
 								// Stars
@@ -253,8 +268,8 @@ get_header();
 								
 							</div>
 						</div>
-						<div class="col-6 offset-1">
-							<div class="text-white fs-16 fw-medium text-capitalize"><?php echo get_field('recomended_text', $casino->ID); ?></div>
+						<div class="col-md-6 offset-md-1 col-12">
+							<div class="text-white fs-sm-16 fs-14 fw-medium text-capitalize"><?php echo get_field('recomended_text', $casino->ID); ?></div>
 						</div>
 					</div><?php
 					
@@ -274,10 +289,10 @@ get_header();
 	?></div>
 </section>
 <section id="how-we-select">
-	<div class="container mb-150">
+	<div class="container mb-xxl-150 mb-md-80 mb-40">
 		<div class="row">
-			<div class="col-7">
-				<h2 class="text-white fs-36 fw-semibold mb-30"><?php the_field('how_we_select_title'); ?></h2><?php
+			<div class="col-xxl-7 col-12">
+				<h2 class="text-white fs-xxl-36 fs-md-32 fs-20 fw-semibold mb-30"><?php the_field('how_we_select_title'); ?></h2><?php
 
 					$list = get_field('how_we_select_list');
 
@@ -289,7 +304,7 @@ get_header();
 								'style' => 'height: 38px; width: 38px;'
 							] );
 
-							?><div class="text-white fs-20"><?php
+							?><div class="text-white fs-xxl-20 fs-md-16 fs-14"><?php
 								echo $list_item['text'];
 							?></div>
 
