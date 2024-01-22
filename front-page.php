@@ -188,7 +188,6 @@ get_header();
 							methods: {
 								toggleImages: function () {
 									this.expanded = !this.expanded;
-									console.log(this.images);
 								},
 								getImages: function () {
 									if (Array.isArray(this.paymentMethods) && this.paymentMethods.length > 0) {
@@ -346,7 +345,6 @@ get_header();
 					.then(response => response.json())
 					.then(posts => {
 						this.casinos = posts;
-						console.log(this.casinos);
 					})
 					.catch(error => {
 						console.error(error);

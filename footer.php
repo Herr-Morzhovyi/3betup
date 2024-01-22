@@ -30,11 +30,11 @@
 	</div>
 </footer>
 <div class="modal fade" id="contactFormModal" tabindex="-1" aria-labelledby="contactFormModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
+	<div class="modal-dialog modal-dialog-centered mx-auto">
 		<div class="modal-content">
-			<div class="modal-body px-40 py-25">
+			<div class="modal-body px-md-40 py-md-25 p-20">
 				<div id="footerContactFormContainer">
-					<h2 class="d-block text-center text-white fs-20 mb-35"><?php _e('Write your message here and our managers will reach out to you!', '3betup') ?></h2><?php
+					<h2 class="d-block text-center text-white fs-md-20 fs-18 mb-md-35 mb-20"><?php _e('Write your message here and our managers will reach out to you!', '3betup') ?></h2><?php
 					$contact_form_id = get_field('footer_modal_contact_form', 'option');
 					echo do_shortcode( '[contact-form-7 id="' . $contact_form_id .'"]');
 				?></div>

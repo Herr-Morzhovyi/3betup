@@ -26,4 +26,33 @@ jQuery(document).ready(function ($) {
 		successMessage.show();
         
     }, false);
+
+	const navContainer = document.getElementById('main-navigation-container')
+	const closeBtn = document.getElementById('menu-checkbox')
+
+	// Adding 'click' event listener
+	document.addEventListener('click', function handleClickOutsideBox(event) {
+
+		// If something clicked outside main-navigation-container, close the menu
+		if ( ! navContainer.contains(event.target)) {
+			closeBtn.checked = false
+		}
+	})
+
+	let lastScrollTop = 0
+
+	window.addEventListener("scroll", function(event){
+		let offset = window.pageYOffset || document.documentElement.scrollTop
+		if (offset > document.documentElement.clientHeight * 0.3 ) {
+			if (offset > lastScrollTop) {
+				document.getElementById('header').classList.add('header-hide') 
+			} else {
+				document.getElementById('header').classList.remove('header-hide')
+			}
+		}
+		lastScrollTop = offset <= 0 ? 0 : offset
+		if ( ! navContainer.contains(event.target)) {
+			closeBtn.checked = false
+		}
+	}, false)
 });

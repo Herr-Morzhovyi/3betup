@@ -8312,6 +8312,10 @@ progress {
   --bs-aspect-ratio: 66.6666666667%;
 }
 
+.ratio-3x4 {
+  --bs-aspect-ratio: 133.3333333333%;
+}
+
 .ratio-4x3 {
   --bs-aspect-ratio: 75%;
 }
@@ -10621,6 +10625,10 @@ progress {
   font-family: var(--bs-font-monospace) !important;
 }
 
+.fs-12 {
+  font-size: 12px !important;
+}
+
 .fs-14 {
   font-size: 14px !important;
 }
@@ -12785,6 +12793,9 @@ progress {
     -moz-column-gap: 9.375rem !important;
          column-gap: 9.375rem !important;
   }
+  .fs-sm-12 {
+    font-size: 12px !important;
+  }
   .fs-sm-14 {
     font-size: 14px !important;
   }
@@ -14115,6 +14126,9 @@ progress {
   .column-gap-md-150 {
     -moz-column-gap: 9.375rem !important;
          column-gap: 9.375rem !important;
+  }
+  .fs-md-12 {
+    font-size: 12px !important;
   }
   .fs-md-14 {
     font-size: 14px !important;
@@ -15447,6 +15461,9 @@ progress {
     -moz-column-gap: 9.375rem !important;
          column-gap: 9.375rem !important;
   }
+  .fs-lg-12 {
+    font-size: 12px !important;
+  }
   .fs-lg-14 {
     font-size: 14px !important;
   }
@@ -16777,6 +16794,9 @@ progress {
   .column-gap-xl-150 {
     -moz-column-gap: 9.375rem !important;
          column-gap: 9.375rem !important;
+  }
+  .fs-xl-12 {
+    font-size: 12px !important;
   }
   .fs-xl-14 {
     font-size: 14px !important;
@@ -18109,6 +18129,9 @@ progress {
     -moz-column-gap: 9.375rem !important;
          column-gap: 9.375rem !important;
   }
+  .fs-xxl-12 {
+    font-size: 12px !important;
+  }
   .fs-xxl-14 {
     font-size: 14px !important;
   }
@@ -19439,6 +19462,9 @@ progress {
   .column-gap-xxxl-150 {
     -moz-column-gap: 9.375rem !important;
          column-gap: 9.375rem !important;
+  }
+  .fs-xxxl-12 {
+    font-size: 12px !important;
   }
   .fs-xxxl-14 {
     font-size: 14px !important;

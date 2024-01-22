@@ -10,17 +10,17 @@ get_header();
 <main id="bonusesAndTournaments">
 	<section>
 		<div class="container mt-60 mb-100">
-			<div class="row">
-				<div class="col-6">
-					<h1 class="fs-24 text-pale-lavender mb-10 fw-bold"><?php the_title(); ?></h1>
-					<div class="fs-18 mb-40 text-white"><?php the_content(); ?></div>
-					<div class="d-flex gap-20 align-items-center">
+			<div class="row gy-40">
+				<div class="col-xxl-6 col-12">
+					<h1 class="fs-lg-24 fs-md-20 fs-18 text-pale-lavender mb-10 fw-bold text-center text-xxl-start"><?php the_title(); ?></h1>
+					<div class="fs-md-18 fs-16 mb-40 text-white text-center text-xxl-start"><?php the_content(); ?></div>
+					<div class="d-flex gap-sm-20 gap-10 align-items-center justify-content-center justify-content-xxl-start w-100">
 						<a href="#bonuses" class="section-links-btn"><?php _e('View Bonuses', '3betup'); ?></a>
 						<a href="#tournaments" class="section-links-btn"><?php _e('Tournaments', '3betup'); ?></a>
 					</div>
 				</div>
-				<div class="col-6">
-					<div class="d-flex flex-column justify-content-end align-items-end h-100">
+				<div class="col-xxl-6 col-12">
+					<div class="d-flex flex-column justify-content-end align-items-xxl-end align-items-center h-100">
 						<button type="button" class="btn btn-filter" data-bs-toggle="modal" data-bs-target="#filterModal">
 							<div class="d-flex align-items-center gap-10">
 								<span><?php
@@ -41,18 +41,23 @@ get_header();
 	</section>
 	<section id="bonuses">
 		<div class="container mb-80">
-			<h2 class="text-center text-white fs-24 fw-semibold mb-30"><?php the_field('bonuses_title'); ?></h2>
-			<div class="row g-30 justify-content-center" v-if="displayedBonuses.length">
-				<div class="col-4" v-for="bonus in displayedBonuses" v-if="bonus && typeof bonus === 'object'">
-					<div class="bonus-card d-flex gap-25">
+			<h2 class="text-center text-white fs-lg-24 fs-md-20 fs-18 fw-semibold mb-30"><?php the_field('bonuses_title'); ?></h2>
+			<div class="row g-xxl-30 g-md-25 g-20 justify-content-center" v-if="displayedBonuses.length">
+				<div class="col-xxl-4 col-md-6 col-12" v-for="bonus in displayedBonuses" v-if="bonus && typeof bonus === 'object'">
+					<div class="bonus-card d-flex gap-md-25 gap-15">
 						<div><?php
 							// * Logo
-							?><div class="ratio ratio-1x1 mb-15" style="background-color: #323082; border-radius: 10px; width: 120px; height: 120px;">
+							?><div class="ratio ratio-2x3 mb-15 d-none d-md-block" style="background-color: #323082; border-radius: 10px; width: 120px; height: 120px;">
 								<div class="position-cover d-flex align-items-center justify-content-center">
 									<img :src="bonus.acfLogo_image_array[0]" alt="">	
 								</div>
 							</div>
-							<div class="d-flex star-rating-recommended w-100 justify-content-center">
+							<div class="ratio ratio-1x2 mb-15 d-md-none" style="background-color: #323082; border-radius: 10px 0 0 0; width: 100px;">
+								<div class="position-cover d-flex align-items-center justify-content-center">
+									<img :src="bonus.acfLogo_image_array[0]" alt="">	
+								</div>
+							</div>
+							<div class="d-flex star-rating-recommended w-100 justify-content-center ps-10 ps-md-0">
 								<img
 								v-for="i in bonus.acf.star_count"
 								:key="i"
@@ -60,13 +65,16 @@ get_header();
 								alt=""
 								/>
 							</div>
+							<div class="mt-10 d-block d-md-none fs-12 text-white ps-10">
+								{{bonus.associatedCasinoTitle}} casino
+							</div>
 						</div>
-						<div>
-							<h3 class="fs-18 text-white mb-20 fw-medium">{{bonus.title.rendered}}</h3>
+						<div class="pt-15 pt-md-0">
+							<h3 class="fs-md-18 fs-16 text-white mb-20 fw-medium">{{bonus.title.rendered}}</h3>
 							<div class="mb-35">
 								<div class="d-flex align-items-center mb-10" style="gap: 5px;" v-for="feature in bonus.acf.features">
 									<img src="<?php echo get_template_directory_uri(  ) . '/images/Package.svg'; ?>" alt="">
-									<div class="text-white fs-16">{{feature.feature}}</div>
+									<div class="text-white fs-md-16 fs-14">{{feature.feature}}</div>
 								</div>
 							</div>
 							<div>
@@ -83,15 +91,18 @@ get_header();
 		</div>
 	</section>
 	<section id="tournaments">
-		<div class="container mb-150">
-			<h2 class="text-center text-white fs-24 fw-semibold mb-15"><?php the_field('tournaments_title'); ?></h2>
-			<div class="text-center fs-18 mb-30 text-white">
-				<div class="w-75 m-auto"><?php
+		<div class="container mb-xxl-150 mb-40">
+			<h2 class="text-center text-white fs-xxl-24 fs-20 fw-semibold mb-15"><?php the_field('tournaments_title'); ?></h2>
+			<div class="text-center fs-xxl-18 fs-md-16 fs-14 mb-30 text-white">
+				<div class="w-75 m-auto d-none d-xxl-block"><?php
+					the_field('tournaments_text');
+				?></div>
+				<div class="w-100 d-block d-xxl-none"><?php
 					the_field('tournaments_text');
 				?></div>
 			</div>
-			<div class="row g-30 justify-content-center" v-if="displayedTournaments.length">
-				<div class="col-3" v-for="tournament in displayedTournaments" v-if="tournament && typeof tournament === 'object'">
+			<div class="row g-xxl-30 g-md-55 g-20 justify-content-center" v-if="displayedTournaments.length">
+				<div class="col-xxl-3 col-md-6 col-12" v-for="tournament in displayedTournaments" v-if="tournament && typeof tournament === 'object'">
 					<div class="tournament-card">
 						<div class="text-center mb-15">
 							<img :src="tournament.acfLogo_tournaments_image_array[0]" alt="">
@@ -149,7 +160,7 @@ get_header();
         el: '#bonusesAndTournaments',
         data: {
             expandedBonuses: false,
-            initialBonusCount: 9,
+            initialBonusCount: 12,
             bonuses: [],
 			expandedTournaments: false,
             initialTournamentsCount: 4,
@@ -162,9 +173,9 @@ get_header();
 			selectedCasinos: [],
         },
         created: function () {
-            this.getBonuses();
+			this.getCasinos();           
 			this.getTournaments();
-			this.getCasinos();
+			this.getBonuses();
         },
         computed: {
             displayedBonuses: function () {
@@ -216,22 +227,15 @@ get_header();
 					return false;
 				}
 			},
-			// filteredBonuses: function () {
-			// 	return this.bonuses.filter(bonus => {
-			// 		this.filteredCasinos.some(casino => casino.id === bonus.acf.associated_casino)
-			// 	});
-			// },
-			// filteredTournaments: function () {
-			// 	return this.tournaments.filter(tournament => {
-			// 		this.filteredCasinos.some(casino => casino.id === tournament.acf.associated_casino)
-			// 	});
-			// },
         },
         methods: {
             toggleBonuses: function () {
                 this.expandedBonuses = !this.expandedBonuses;
             },
-            getBonuses: function () {
+            async getBonuses () {
+
+				await this.getCasinos();
+
                 const endpoint = '/wp-json/wp/v2/bonus?per_page=99';
 
                 fetch(endpoint)
@@ -239,7 +243,12 @@ get_header();
                     .then((posts) => {
                         if (Array.isArray(posts)) {
                             this.bonuses = posts;
-							console.log(this.bonuses);
+							posts.forEach(post => {
+								let associated_casino = this.casinos.find(casino => casino.id === post.acf.associated_casino);
+								if (associated_casino) {
+                     			   post.associatedCasinoTitle = associated_casino.title.rendered;
+								}
+							});
                         } else {
                             console.error("Fetched data is not an array.");
                         }
@@ -259,7 +268,6 @@ get_header();
                     .then((posts) => {
                         if (Array.isArray(posts)) {
                             this.tournaments = posts;
-							console.log(this.tournaments);
                         } else {
                             console.error("Fetched data is not an array.");
                         }
@@ -274,10 +282,10 @@ get_header();
 				const month = (date.getMonth() + 1).toString().padStart(2, '0');
 				return `${day}.${month}`;
 			},
-			getCasinos: function () {
+			async getCasinos() {
 				const endpoint = '/wp-json/wp/v2/casino?per_page=99';
 
-				fetch(endpoint)
+				await fetch(endpoint)
 					.then((response) => response.json())
 					.then((posts) => {
 						if (Array.isArray(posts)) {

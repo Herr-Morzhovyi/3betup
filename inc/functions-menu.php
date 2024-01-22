@@ -21,8 +21,8 @@ function show_nav_menu_items($current_item = 0, &$menu_items) {
 
 		if ($current_item == 0) {
 			?>
-			<nav class="menu-wrapper">
-			<ul class="d-flex gap-20 nav primary-menu flex-nowrap container fw-medium"><?php
+			
+			<ul class="d-flex gap-20 flex-column flex-xxl-row nav flex-nowrap container fw-medium mb-0"><?php
 		} else {
 
 			echo '<button type="button" class="sub-menu-button"></button>';
@@ -48,7 +48,7 @@ function show_nav_menu_items($current_item = 0, &$menu_items) {
 
 		if ($current_item == 0) { ?>
 			</ul>
-			</nav><?php
+			<?php
 
 		} else {
 			?></ul><?php

@@ -14,6 +14,8 @@ Text Domain: 3betup
 
 /* Page commons */ 
 
+@import 'css/menu.scss';
+
 * {
 	margin: 0;
 	padding: 0;
@@ -257,6 +259,10 @@ footer .footer_text a {
 			width: 350px !important;
 			min-width: 100%;
 		}
+		@media screen and (max-width: 1600px) {
+			width: 100% !important;
+			min-width: 100%;
+		}
 	}
 	button {
 		position: absolute;
@@ -273,6 +279,9 @@ footer .footer_text a {
 
 .modal-dialog {
 	max-width: 948px !important;
+	@media screen and (max-width: 991px) {
+		max-width: calc(100% - 40px) !important;
+	}
 }
 
 .modal-content {
@@ -340,6 +349,13 @@ footer .footer_text a {
 	border: 2px solid #F7780F;
 	border-radius: 30px;
 	text-decoration: none;
+	@media screen and (max-width: 767px) {
+		font-size: 16px;
+	}
+	@media screen and (max-width: 576px) {
+		font-size: 14px;
+		
+	}
 }
 
 #bonuses .bonus-card {
@@ -347,6 +363,9 @@ footer .footer_text a {
 	border-radius: 10px;
 	max-height: 300px;
 	padding: 16px;
+	@media screen and (max-width: 767px) {
+		padding: 0 16px 16px 0;
+	}
 }
 
 .claim-bonus-btn {
@@ -358,6 +377,9 @@ footer .footer_text a {
 	background-color: var(--bs-navy-blue);
 	border-radius: 32px;
 	display: inline-block;
+	@media screen and (max-width: 767px) {
+		font-size: 12px;
+	}
 }
 
 .tournament-card {
@@ -399,6 +421,12 @@ footer .footer_text a {
 		color: white;
 		font-weight: 600;
 		font-size: 20px;
+		@media screen and (max-width: 1400px) {
+			font-size: 16px;
+		}
+	}
+	@media screen and (max-width: 576px) {
+		gap: 50px;
 	}
 	&:hover {
 		background-color: #1c1b43;
