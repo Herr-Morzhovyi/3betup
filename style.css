@@ -419,16 +419,27 @@ footer .footer_text a {
   text-decoration: none;
 }
 
+#footerContactFormContainer input::-moz-placeholder, textarea::-moz-placeholder {
+  color: white;
+}
+
+#footerContactFormContainer input::placeholder, textarea::placeholder {
+  color: white;
+}
+
 #subscriptionForm {
   position: relative;
   max-width: 100%;
+  min-width: 350px;
 }
 @media screen and (max-width: 767px) {
   #subscriptionForm {
     width: 350px !important;
+    min-width: 280px;
   }
 }
-#subscriptionForm input[type=email] {
+#subscriptionForm input[type=email],
+#subscriptionForm input[type=email]:focus-visible {
   background: white;
   border: none;
   border-radius: 51px;
@@ -437,14 +448,15 @@ footer .footer_text a {
   min-width: 350px;
 }
 @media screen and (max-width: 767px) {
-  #subscriptionForm input[type=email] {
+  #subscriptionForm input[type=email],
+  #subscriptionForm input[type=email]:focus-visible {
     max-width: 100%;
-    width: 350px !important;
     min-width: 100%;
   }
 }
 @media screen and (max-width: 1600px) {
-  #subscriptionForm input[type=email] {
+  #subscriptionForm input[type=email],
+  #subscriptionForm input[type=email]:focus-visible {
     width: 100% !important;
     min-width: 100%;
   }

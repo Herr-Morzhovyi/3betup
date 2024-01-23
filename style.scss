@@ -241,13 +241,21 @@ footer .footer_text a {
 	text-decoration: none;
 }
 
+#footerContactFormContainer input::placeholder, textarea::placeholder {
+	color: white;
+	// opacity: 1;
+}
+
 #subscriptionForm {
 	position: relative;
 	max-width: 100%;
+	min-width: 350px;
 	@media screen and (max-width: 767px) {
 		width: 350px !important;
+		min-width: 280px;
 	}
-	input[type="email"] {
+	input[type="email"], 
+	input[type="email"]:focus-visible {
 		background: white;
 		border: none;
 		border-radius: 51px;
@@ -256,7 +264,6 @@ footer .footer_text a {
 		min-width: 350px;
 		@media screen and (max-width: 767px) {
 			max-width: 100%;
-			width: 350px !important;
 			min-width: 100%;
 		}
 		@media screen and (max-width: 1600px) {

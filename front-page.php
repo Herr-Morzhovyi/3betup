@@ -9,7 +9,7 @@ get_header();
 			<div class="col-xxl-6 col-12 my-80 my-xxl-0">
 				<h1 class="fs-36 text-pale-lavender mb-10 fw-bold text-center text-xxl-start"><?php the_field('banner_title'); ?></h1>
 				<p class="fs-20 mb-40 text-center text-xxl-start" style="color: #d4d3d3; line-heigth: 152.5%;"><?php echo strip_tags(get_field('banner_text')); ?></p>
-				<div class="row"><?php
+				<div class="row d-md-flex d-none"><?php
 
 					foreach ( get_field('banner_features') as $feature ) {
 
@@ -241,7 +241,7 @@ get_header();
 						</div>
 						<div class="col-md-2 offset-md-1 col-sm-6 col-12">
 							<div class="w-100 d-flex align-items-center justify-content-md-start justify-content-sm-end justify-content-start">
-								<span class="text-white fw-semibold px-10"><?php echo get_field('rating', $casino->ID); ?>/10</span><?php
+								<span class="text-white fw-semibold px-sm-10"><?php echo get_field('rating', $casino->ID); ?>/10</span><?php
 
 								// Stars
 								$rating = get_field('rating', $casino->ID);
