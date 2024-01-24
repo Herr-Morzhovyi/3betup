@@ -1,13 +1,21 @@
 <footer class="bg-dark-indigo">
 	<div class="container pt-25 pb-50">
 		<div class="row gy-md-40 gy-50">
-			<div class="col-xxl-4 col-12 text-white d-flex justify-content-center align-items-start gap-20 footer-menu"><?php
+			<div class="col-xxl-4 col-12 text-white d-flex flex-column flex-xxl-row justify-content-center align-items-xxl-start align-items-center gap-20 footer-menu"><?php
 				if (has_nav_menu('primary')) {
 
-					$menu_items = wp_get_nav_menu_items(wp_get_nav_menu_object(get_nav_menu_locations()['primary']));
-					_wp_menu_item_classes_by_context($menu_items);
+					$menu_items_primary = wp_get_nav_menu_items(wp_get_nav_menu_object(get_nav_menu_locations()['primary']));
+					_wp_menu_item_classes_by_context($menu_items_primary);
 				
-					show_nav_menu_items(0, $menu_items, 'primary');
+					show_nav_menu_items_footer(0, $menu_items_primary, 'primary');
+				
+				}
+				if (has_nav_menu('secondary')) {
+
+					$menu_items_primary = wp_get_nav_menu_items(wp_get_nav_menu_object(get_nav_menu_locations()['secondary']));
+					_wp_menu_item_classes_by_context($menu_items_primary);
+				
+					show_nav_menu_items_footer(0, $menu_items_primary, 'secondary');
 				
 				}
 			?></div>
@@ -21,10 +29,14 @@
 				<div class="text-white mb-30 text-wrap flex-shrink-1 text-center text-md-start"><?php
 					echo get_field('footer_text_2', 'option');
 				?></div>
-				<form method="post" id="subscriptionForm">
-					<input type="email" name="email" placeholder="Enter your email" required class="w-100">
-					<button type="submit" value="Subscribe">Subscribe</button>
-				</form>
+				<div class="d-flex flex-column gap-10 align-items-start">
+					<form method="post" id="subscriptionForm">
+						<input type="email" name="email" placeholder="Enter your email" required class="w-100">
+						<button type="submit" value="Subscribe">Subscribe</button>
+					</form>
+					<div class="fw-light fs-12 text-white"><?php _e('By clicking the "Send message" button, I agree to the Terms & Conditions and Privacy Policy.', '3betup'); ?></div>
+				</div>
+				
 			</div>
 		</div>
 	</div>

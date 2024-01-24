@@ -235,6 +235,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 header {
   padding: 0 67.7px;
 }
@@ -535,6 +539,20 @@ footer .footer_text a {
 .modal-content form .wpcf7-not-valid-tip {
   padding-left: 27px;
 }
+.modal-content form .wpcf7-acceptance label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.modal-content form .wpcf7-acceptance label span {
+  font-size: 18px;
+  color: white;
+}
+@media screen and (max-width: 767px) {
+  .modal-content form .wpcf7-acceptance label span {
+    font-size: 16px;
+  }
+}
 
 .section-links-btn {
   color: white;
@@ -722,4 +740,9 @@ footer .footer_text a {
   .text-md-start {
     text-align: left !important;
   }
+}
+
+input[type=checkbox] {
+  width: 24px !important;
+  height: 24px !important;
 }

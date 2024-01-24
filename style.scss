@@ -43,6 +43,10 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
+html {
+	overflow-x: hidden;
+}
+
 header {
 	padding: 0 67.7px;
 }
@@ -345,6 +349,18 @@ footer .footer_text a {
 		.wpcf7-not-valid-tip {
 			padding-left: 27px;
 		}
+		.wpcf7-acceptance label {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			span {
+				font-size: 18px;
+				color: white;
+				@media screen and (max-width: 767px) {
+					font-size: 16px;
+				}
+			}
+		}
 	}
 }
 
@@ -526,4 +542,9 @@ footer .footer_text a {
 		text-align: left !important;	
 	}
 	
+}
+
+input[type="checkbox"] {
+	width: 24px !important;
+	height: 24px !important;
 }

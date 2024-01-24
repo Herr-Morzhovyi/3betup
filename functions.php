@@ -24,6 +24,7 @@ add_theme_support('nav-menus');
 
 // Register Menus
 register_nav_menu('primary', 'Primary Menu');
+register_nav_menu('secondary', 'Secondary Menu');
 
 // Image sizes
 add_image_size('fullhd', 1920, 1080, FALSE);
