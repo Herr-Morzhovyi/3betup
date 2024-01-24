@@ -527,10 +527,14 @@ footer .footer_text a {
   font-weight: 600;
   font-size: 18px;
   box-shadow: 0px 1.5px 4px rgba(92, 103, 237, 0.4);
-  transition: box-shadow 0.3s ease-in-out;
+  opacity: 1;
+  transition: box-shadow, opacity 0.3s ease-in-out;
 }
 .modal-content form input[type=submit]:hover {
   box-shadow: 0px 3px 8px rgba(92, 103, 237, 0.8);
+}
+.modal-content form input[type=submit]:disabled {
+  opacity: 0.5;
 }
 .modal-content form span.wpcf7-form-control-wrap {
   margin-bottom: 25px;

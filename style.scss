@@ -337,9 +337,13 @@ footer .footer_text a {
 			font-weight: 600;
 			font-size: 18px;
 			box-shadow: 0px 1.5px 4px rgba(92, 103, 237, .4);
-			transition: box-shadow .3s ease-in-out;
+			opacity: 1;
+			transition: box-shadow, opacity .3s ease-in-out;
 			&:hover {
 				box-shadow: 0px 3px 8px rgba(92, 103, 237, .8);
+			}
+			&:disabled {
+				opacity: 0.5;
 			}
 		}
 		span.wpcf7-form-control-wrap {
