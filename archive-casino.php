@@ -34,7 +34,7 @@ get_header();
 			</div>
 			<div class="col-md-2 offset-md-1 col-sm-6 col-12">
 				<div class="w-100 d-flex align-items-center justify-content-md-start justify-content-sm-end justify-content-start">
-					<span class="text-white fw-semibold px-10">{{ casino.acf.rating }}/10</span>
+					<span class="text-white fw-semibold px-sm-10 pe-10">{{ casino.acf.rating }}/10</span>
 
 					<!-- Stars -->
 					<div class="d-flex px-10 star-rating-recommended">

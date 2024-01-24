@@ -26,15 +26,15 @@
 				<button type="button" data-bs-toggle="modal" data-bs-target="#contactFormModal" class="contact-form-modal-launch-button"><?php _e('Write direct message to us', '3betup'); ?></button>
 			</div>
 			<div class="col-xxl-3 offset-xxl-1 col-12 d-flex flex-xxl-column flex-md-row flex-column justify-content-between justify-content-xxl-start gap-md-30 gap-20 align-items-center align-items-xxl-start">
-				<div class="text-white mb-30 text-wrap flex-shrink-1 text-center text-md-start"><?php
+				<div class="text-white text-wrap flex-shrink-1 text-center text-md-start"><?php
 					echo get_field('footer_text_2', 'option');
 				?></div>
-				<div class="d-flex flex-column gap-10 align-items-start">
+				<div class="d-flex flex-column gap-10 align-items-md-end align-items-center">
 					<form method="post" id="subscriptionForm">
 						<input type="email" name="email" placeholder="Enter your email" required class="w-100">
 						<button type="submit" value="Subscribe">Subscribe</button>
 					</form>
-					<div class="fw-light fs-12 text-white"><?php _e('By clicking the "Send message" button, I agree to the Terms & Conditions and Privacy Policy.', '3betup'); ?></div>
+					<div class="fw-light fs-12 text-white text-center text-md-end text-xxl-start"><?php _e('By clicking the "Send message" button, I agree to the Terms & Conditions and Privacy Policy.', '3betup'); ?></div>
 				</div>
 				
 			</div>
@@ -46,15 +46,24 @@
 		<div class="modal-content">
 			<div class="modal-body px-md-40 py-md-25 p-20">
 				<div id="footerContactFormContainer">
-					<h2 class="d-block text-center text-white fs-md-20 fs-18 mb-md-35 mb-20"><?php _e('Write your message here and our managers will reach out to you!', '3betup') ?></h2><?php
+					<div class="d-flex w-100 justify-content-between gap-25 align-items-center mb-md-35 mb-20">
+						<h2 class="d-block text-md-center text-start text-white fs-md-20 fs-16"><?php _e('Write your message here and our managers will reach out to you!', '3betup') ?></h2>
+						<button type="button" class="btn d-block d-md-none" data-bs-dismiss="modal" aria-label="Close">
+							<img src="<?php echo get_template_directory_uri() . '/images/close.svg'; ?>" alt="">
+						</button>
+					</div><?php
+					
 					$contact_form_id = get_field('footer_modal_contact_form', 'option');
 					echo do_shortcode( '[contact-form-7 id="' . $contact_form_id .'"]');
 				?></div>
-				<div class="success-message">
+				<div class="success-message position-relative">
+					<button type="button" class="btn d-block d-md-none position-absolute right-0" data-bs-dismiss="modal" aria-label="Close">
+						<img src="<?php echo get_template_directory_uri() . '/images/close.svg'; ?>" alt="">
+					</button>
 					<div class="d-flex h-100 w-100 flex-column align-items-center justify-content-center">
 						<img src="<?php echo get_template_directory_uri(  ) . '/images/success.png'; ?>" alt="" style="margin-bottom: 10px; height: 48px; width: 48px;">
-						<h3 class="text-white fs-20 fw-semibold">We received your message!</h3>
-						<h4 class="text-white fs-20 fw-semibold">Our managers will contact you as soon as possible!</h4>
+						<h3 class="text-white fs-20 fw-semibold text-center">We received your message!</h3>
+						<h4 class="text-white fs-20 fw-semibold text-center">Our managers will contact you as soon as possible!</h4>
 					</div>
 					
 				</div>

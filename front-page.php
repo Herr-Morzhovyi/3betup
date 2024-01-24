@@ -213,7 +213,7 @@ get_header();
 </section>
 <section id="recomendedCasinos">
 	<div class="container mb-80">
-		<h2 class="text-center text-white fs-md-24 fs-sm-20 fs-18 fw-semibold mb-30"><?php the_field('recomended_casinos_title'); ?></h2><?php
+		<h2 class="text-center text-white fs-md-24 fs-20 fw-semibold mb-30"><?php the_field('recomended_casinos_title'); ?></h2><?php
 
 			$recomended_casinos = get_field('recomended_casinos');
 			$recomended_casinos_json = json_encode($recomended_casinos);

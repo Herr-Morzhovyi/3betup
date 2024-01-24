@@ -11,7 +11,7 @@ jQuery(document).ready(function ($) {
 			return;
 		}
 	});
-	document.addEventListener('wpcf7submit', function(event) {
+	document.addEventListener('wpcf7mailsent', function(event) {
 		var form = $('#footerContactFormContainer');
 
 		var formHeight = form.outerHeight();
@@ -26,6 +26,13 @@ jQuery(document).ready(function ($) {
 		successMessage.show();
         
     }, false);
+	// Assuming your modal has an id of 'myModal'
+	$('#contactFormModal').on('hidden.bs.modal', function (e) {
+		// Show the form
+		$('#footerContactFormContainer').show();
+		var successMessage = $('.success-message');
+		successMessage.hide();
+	});
 
 	const navContainer = document.getElementById('main-navigation-container')
 	const closeBtn = document.getElementById('menu-checkbox')

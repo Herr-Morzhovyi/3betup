@@ -536,12 +536,20 @@ footer .footer_text a {
 .modal-content form input[type=submit]:disabled {
   opacity: 0.5;
 }
+@media screen and (max-width: 767px) {
+  .modal-content form input[type=submit] {
+    margin: auto;
+  }
+}
 .modal-content form span.wpcf7-form-control-wrap {
   margin-bottom: 25px;
   display: block;
 }
 .modal-content form .wpcf7-not-valid-tip {
   padding-left: 27px;
+}
+.modal-content form .wpcf7-acceptance .wpcf7-list-item {
+  margin: 0;
 }
 .modal-content form .wpcf7-acceptance label {
   display: flex;
@@ -556,6 +564,9 @@ footer .footer_text a {
   .modal-content form .wpcf7-acceptance label span {
     font-size: 16px;
   }
+}
+.modal-content .wpcf7-response-output {
+  color: white;
 }
 
 .section-links-btn {
