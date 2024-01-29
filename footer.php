@@ -32,9 +32,20 @@
 				<div class="d-flex flex-column gap-10 align-items-md-end align-items-center">
 					<form method="post" id="subscriptionForm">
 						<input type="email" name="email" placeholder="Enter your email" required class="w-100">
-						<button type="submit" value="Subscribe">Subscribe</button>
+						<button type="submit" value="Subscribe"><?php _e('Subscribe', '3betup'); ?></button>
 					</form>
-					<div class="fw-light fs-12 text-white text-center text-md-end text-xxl-start"><?php _e('By clicking the "Send message" button, I agree to the Terms & Conditions and Privacy Policy.', '3betup'); ?></div>
+					<div class="fw-light fs-12 text-white text-center text-md-end text-xxl-start"><?php
+
+						$terms_page = get_page_by_path('terms-and-conditions', OBJECT, 'page');
+						$terms_page_url = $terms_page ? get_permalink($terms_page->ID) : '';
+
+						printf(
+							__('By clicking the "Send message" button, I agree to the %1$sTerms & Conditions%3$s and %2$sPrivacy Policy%3$s.', '3betup'),
+							'<a class="text-pale-lavender text-decoration-none" href="' . $terms_page_url . '">',
+							'<a class="text-pale-lavender text-decoration-none" href="' . get_privacy_policy_url(  ) . '">',
+							'</a>'
+						);
+					?></div>
 				</div>
 				
 			</div>
@@ -57,13 +68,13 @@
 					echo do_shortcode( '[contact-form-7 id="' . $contact_form_id .'"]');
 				?></div>
 				<div class="success-message position-relative">
-					<button type="button" class="btn d-block d-md-none position-absolute right-0" data-bs-dismiss="modal" aria-label="Close">
+					<button type="button" class="btn position-absolute end-0" data-bs-dismiss="modal" aria-label="Close">
 						<img src="<?php echo get_template_directory_uri() . '/images/close.svg'; ?>" alt="">
 					</button>
 					<div class="d-flex h-100 w-100 flex-column align-items-center justify-content-center">
 						<img src="<?php echo get_template_directory_uri(  ) . '/images/success.png'; ?>" alt="" style="margin-bottom: 10px; height: 48px; width: 48px;">
-						<h3 class="text-white fs-20 fw-semibold text-center">We received your message!</h3>
-						<h4 class="text-white fs-20 fw-semibold text-center">Our managers will contact you as soon as possible!</h4>
+						<h3 class="text-white fs-20 fw-semibold text-center"><?php _e('We received your message!', '3betup'); ?></h3>
+						<h4 class="text-white fs-20 fw-semibold text-center"><?php _e('Our managers will contact you as soon as possible!', '3betup'); ?></h4>
 					</div>
 					
 				</div>

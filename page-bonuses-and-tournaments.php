@@ -9,11 +9,11 @@ get_header();
 ?>
 <main id="bonusesAndTournaments">
 	<section>
-		<div class="container mt-60 mb-100">
+		<div class="container mt-60 mb-md-100 mb-60">
 			<div class="row gy-40">
 				<div class="col-xxl-6 col-12">
-					<h1 class="fs-lg-24 fs-md-20 fs-18 text-pale-lavender mb-10 fw-bold text-center text-xxl-start"><?php the_title(); ?></h1>
-					<div class="fs-md-18 fs-16 mb-40 text-white text-center text-xxl-start"><?php the_content(); ?></div>
+					<h1 class="fs-md-24 fs-20 text-pale-lavender mb-10 fw-bold text-center text-xxl-start"><?php the_title(); ?></h1>
+					<div class="fs-18 mb-40 text-white text-center text-xxl-start"><?php the_content(); ?></div>
 					<div class="d-flex gap-sm-20 gap-10 align-items-center justify-content-center justify-content-xxl-start w-100">
 						<a href="#bonuses" class="section-links-btn"><?php _e('View Bonuses', '3betup'); ?></a>
 						<a href="#tournaments" class="section-links-btn"><?php _e('Tournaments', '3betup'); ?></a>
@@ -26,9 +26,8 @@ get_header();
 								<span><?php
 									_e('Casino Filter', '3betup');
 								?></span>
-								<div class="filterCount">
+								<div class="filterCount" @click="clearFilteredCasinos()">
 									<span v-if="filteredCasinos.length">{{filteredCasinos.length}}</span>
-									<span v-if="filteredCasinos.length">x</span>
 								</div>
 							</div>
 							
@@ -45,28 +44,30 @@ get_header();
 			<div class="row g-xxl-30 g-md-25 g-20 justify-content-center" v-if="displayedBonuses.length">
 				<div class="col-xxl-4 col-md-6 col-12" v-for="bonus in displayedBonuses" v-if="bonus && typeof bonus === 'object'">
 					<div class="bonus-card d-flex gap-md-25 gap-15">
-						<div><?php
+						<div class="d-flex flex-column justify-content-between justify-content-md-start"><?php
 							// * Logo
 							?><div class="ratio ratio-2x3 mb-15 d-none d-md-block" style="background-color: #323082; border-radius: 10px; width: 120px; height: 120px;">
 								<div class="position-cover d-flex align-items-center justify-content-center">
 									<img :src="bonus.acfLogo_image_array[0]" alt="">	
 								</div>
 							</div>
-							<div class="ratio ratio-1x2 mb-15 d-md-none" style="background-color: #323082; border-radius: 10px 0 0 0; width: 100px;">
+							<div class="ratio ratio-3x4 mb-15 d-md-none" style="background-color: #323082; border-radius: 10px; width: 100px;">
 								<div class="position-cover d-flex align-items-center justify-content-center">
 									<img :src="bonus.acfLogo_image_array[0]" alt="">	
 								</div>
 							</div>
-							<div class="d-flex star-rating-recommended w-100 justify-content-center ps-10 ps-md-0">
-								<img
-								v-for="i in bonus.acf.star_count"
-								:key="i"
-								src="<?php echo get_template_directory_uri(  ) . '/images/star.svg'; ?>"
-								alt=""
-								/>
-							</div>
-							<div class="mt-10 d-block d-md-none fs-12 text-white ps-10">
-								{{bonus.associatedCasinoTitle}} casino
+							<div>
+								<div class="d-flex star-rating-recommended w-100 justify-content-center ps-10 ps-md-0">
+									<img
+									v-for="i in bonus.acf.star_count"
+									:key="i"
+									src="<?php echo get_template_directory_uri(  ) . '/images/star.svg'; ?>"
+									alt=""
+									/>
+								</div>
+								<div class="mt-10 d-block d-md-none fs-12 text-white ps-10">
+									{{bonus.associatedCasinoTitle}} casino
+								</div>
 							</div>
 						</div>
 						<div class="pt-15 pt-md-0">

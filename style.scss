@@ -111,6 +111,7 @@ header {
 	font-size: 300px;
 	letter-spacing: 10px;
     line-height: 0.57;
+	color: #A4AAF8;;
 }
 
 #a404-2 {
@@ -252,8 +253,13 @@ footer .footer_text a {
 
 #subscriptionForm {
 	position: relative;
-	max-width: 100%;
+	max-width: 350px;
 	min-width: 350px;
+	background-color: white;
+	border-radius: 50px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
 	@media screen and (max-width: 767px) {
 		width: 350px !important;
 		min-width: 280px;
@@ -262,29 +268,19 @@ footer .footer_text a {
 	input[type="email"]:focus-visible {
 		background: white;
 		border: none;
-		border-radius: 51px;
-		padding: 13px 27px;
+		padding: 13px 10px 13px 27px;
 		font-weight: 500;
-		min-width: 350px;
-		@media screen and (max-width: 767px) {
-			max-width: 100%;
-			min-width: 100%;
-		}
-		@media screen and (max-width: 1600px) {
-			width: 100% !important;
-			min-width: 100%;
-		}
+		outline: none;
 	}
 	button {
-		position: absolute;
-		right: 2px;
 		background-color: #F7780F;
 		border: none;
 		padding: 11px 38px;
-		border-radius: 51px;
-		top: 2px;
+		border-radius: 50px;
 		color: #151531;
 		font-weight: 500;
+		height: calc(100% - 4px);
+		margin-right: 2px;
 	}
 }
 

@@ -22,7 +22,7 @@ function show_nav_menu_items($current_item = 0, &$menu_items) {
 		if ($current_item == 0) {
 			?>
 			
-			<ul class="d-flex gap-20 flex-column flex-xxl-row nav flex-nowrap container fw-medium mb-0"><?php
+			<ul class="d-flex gap-20 flex-column flex-xxl-row nav flex-nowrap container fw-medium mb-0 px-0"><?php
 		} else {
 
 			echo '<button type="button" class="sub-menu-button"></button>';

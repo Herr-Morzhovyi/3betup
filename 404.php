@@ -15,7 +15,7 @@ get_header();
 				<div id="a404-2">0</div>
 				<div id="a404-3">4</div>
 			</div>
-			<div class="text-40 fw-bold text-dark my-50">
+			<div class="text-40 fw-bold text-white my-80">
 				<?php _e('The page you seek is missing', '3betup'); ?>
 			</div>
 		</div>
