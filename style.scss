@@ -254,7 +254,7 @@ footer .footer_text a {
 #subscriptionForm {
 	position: relative;
 	max-width: 350px;
-	min-width: 350px;
+	width: 100%;
 	background-color: white;
 	border-radius: 50px;
 	overflow: hidden;
@@ -263,6 +263,9 @@ footer .footer_text a {
 	@media screen and (max-width: 767px) {
 		width: 350px !important;
 		min-width: 280px;
+	}
+	@media screen and (min-width: 1600px) {
+		min-width: 350px;
 	}
 	input[type="email"], 
 	input[type="email"]:focus-visible {

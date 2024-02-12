@@ -29,7 +29,7 @@
 				<div class="text-white text-wrap flex-shrink-1 text-center text-md-start"><?php
 					echo get_field('footer_text_2', 'option');
 				?></div>
-				<div class="d-flex flex-column gap-10 align-items-md-end align-items-center">
+				<div class="d-flex flex-column gap-10 align-items-md-end align-items-center w-100">
 					<form method="post" id="subscriptionForm">
 						<input type="email" name="email" placeholder="Enter your email" required class="w-100">
 						<button type="submit" value="Subscribe"><?php _e('Subscribe', '3betup'); ?></button>

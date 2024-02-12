@@ -5,7 +5,7 @@ get_header();
 // * Banner section
 ?><section id="banner">
 	<div class="container">
-		<div class="row gx-xxl-120 align-items-center mt-10">
+		<div class="row align-items-center mt-10">
 			<div class="col-xxl-6 col-12 my-80 my-xxl-0">
 				<h1 class="fs-36 text-pale-lavender mb-10 fw-bold text-center text-xxl-start"><?php the_field('banner_title'); ?></h1>
 				<p class="fs-20 mb-40 text-center text-xxl-start" style="color: #d4d3d3; line-heigth: 152.5%;"><?php echo strip_tags(get_field('banner_text')); ?></p>
@@ -30,7 +30,8 @@ get_header();
 			</div>
 			<div class="col-xxl-6 d-none d-xxl-block position-relative"><?php
 				echo wp_get_attachment_image( get_field('banner_image')['ID'], 'post-thumbnail', false, [
-					'class' => 'w-100 h-auto'
+					'class' => 'w-100 h-auto',
+					'sizes' => '(min-width: 1480px) 660px, (min-width: 1600px) 760px'
 				] );
 			?></div>
 		</div>
@@ -314,7 +315,8 @@ get_header();
 			?></div>
 			<div class="col-5 position-relative"><?php
 				echo wp_get_attachment_image( get_field('bottom_image')['ID'], 'post-thumbnail', false, [
-					'class' => 'position-cover'
+					'class' => 'position-cover',
+					'sizes' => '(min-width: 1480px) 584px, (min-width: 1600px) 667px'
 				] );
 			?></div>
 		</div>

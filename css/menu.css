@@ -7,6 +7,7 @@ Header and Menu
   z-index: 999;
   box-shadow: -20px -20px 50px #151531;
   background-color: #1c1b43;
+  overflow: hidden;
 }
 
 .sub-menu-checkbox-back-label {

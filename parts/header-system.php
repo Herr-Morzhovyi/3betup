@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<title><?php wp_title('&raquo;', 'true', 'right'); ?></title>
+	<title>3 BetUp Casino ratings</title>
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) { ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php } ?>
