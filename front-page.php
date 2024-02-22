@@ -301,7 +301,7 @@ get_header();
 						?><div class="d-flex gap-10 align-items-center mb-40"><?php
 
 							echo wp_get_attachment_image( $list_item['icon']['ID'], 'post-thumbnail', true, [
-								'style' => 'height: 38px; width: 38px;'
+								'style' => 'height: 38px; width: 38px; flex-shrink: 0;'
 							] );
 
 							?><div class="text-white fs-xxl-20 fs-md-16 fs-14"><?php
