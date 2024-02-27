@@ -111,7 +111,7 @@ get_header();
 						<div class="ratio ratio-16x9 mb-10">
 							<img :src="tournament.featured_image_array[0]" alt="" class="position-cover">
 						</div>
-						<h3 class="text-white fs-20 mb-10 fw-bold" v-if="tournament.acf.show_title == true">{{tournament.title.rendered}}</h3>
+						<h3 class="text-white fs-20 mb-10 fw-bold" v-if="tournament.acf.show_title == true">{{tournament.acf.title}}</h3>
 						<div class="text-white fs-18 mb-10 fw-medium">
 							{{formatDate(tournament.acf.duration_start)}} - {{formatDate(tournament.acf.duration_end)}}
 						</div>
