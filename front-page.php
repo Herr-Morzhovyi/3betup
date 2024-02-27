@@ -52,7 +52,7 @@ get_header();
 				foreach ($top_casinos as $casino_index => $casino) {
 
 					?><div class="col-xxl-6 col-12">
-						<div class="bg-dark-indigo p-sm-25 p-0 casino-card" id="casino<?php echo $casino_index; ?>">
+						<div class="bg-dark-indigo p-sm-25 p-0 casino-card h-100" id="casino<?php echo $casino_index; ?>">
 							<div class="row gx-25">
 								<div class="col-md-3 col-4 d-flex flex-column justify-content-between align-items-center">
 									<div class="w-100"><?php

@@ -43,7 +43,7 @@ get_header();
 			<h2 class="text-center text-white fs-lg-24 fs-md-20 fs-18 fw-semibold mb-30"><?php the_field('bonuses_title'); ?></h2>
 			<div class="row g-xxl-30 g-md-25 g-20 justify-content-center" v-if="displayedBonuses.length">
 				<div class="col-xxl-4 col-md-6 col-12" v-for="bonus in displayedBonuses" v-if="bonus && typeof bonus === 'object'">
-					<div class="bonus-card d-flex gap-md-25 gap-15">
+					<div class="bonus-card d-flex gap-md-25 gap-15 h-100">
 						<div class="d-flex flex-column justify-content-between justify-content-md-start"><?php
 							// * Logo
 							?><div class="ratio ratio-2x3 mb-15 d-none d-md-block" style="background-color: #323082; border-radius: 10px; width: 120px; height: 120px;">
@@ -104,13 +104,14 @@ get_header();
 			</div>
 			<div class="row g-xxl-30 g-md-55 g-20 justify-content-center" v-if="displayedTournaments.length">
 				<div class="col-xxl-3 col-md-6 col-12" v-for="tournament in displayedTournaments" v-if="tournament && typeof tournament === 'object'">
-					<div class="tournament-card">
+					<div class="tournament-card h-100">
 						<div class="text-center mb-15">
 							<img :src="tournament.acfLogo_tournaments_image_array[0]" alt="">
 						</div>
 						<div class="ratio ratio-16x9 mb-10">
 							<img :src="tournament.featured_image_array[0]" alt="" class="position-cover">
 						</div>
+						<h3 class="text-white fs-20 mb-10 fw-bold" v-if="tournament.acf.show_title == true">{{tournament.title.rendered}}</h3>
 						<div class="text-white fs-18 mb-10 fw-medium">
 							{{formatDate(tournament.acf.duration_start)}} - {{formatDate(tournament.acf.duration_end)}}
 						</div>
@@ -277,10 +278,16 @@ get_header();
                         console.error("Error fetching data:", error);
                     });
             },
-			formatDate(unixTimestamp) {
-				const date = new Date(unixTimestamp * 1000);
-				const day = date.getDate().toString().padStart(2, '0');
-				const month = (date.getMonth() + 1).toString().padStart(2, '0');
+			formatDate(dateString) {
+				let year = dateString.substring(0, 4);
+				let month = dateString.substring(4, 6);
+				let day = dateString.substring(6, 8);
+
+				let date = new Date(year, month - 1, day);  // month is 0-indexed
+
+				day = date.getDate().toString().padStart(2, '0');
+				month = (date.getMonth() + 1).toString().padStart(2, '0');  // month is 0-indexed
+
 				return `${day}.${month}`;
 			},
 			async getCasinos() {
