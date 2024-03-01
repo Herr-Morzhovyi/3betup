@@ -48,7 +48,7 @@ get_header();
 							// * Logo
 							?><div class="ratio ratio-2x3 mb-15 d-none d-md-block" style="background-color: #323082; border-radius: 10px; width: 120px; height: 120px;">
 								<div class="position-cover d-flex align-items-center justify-content-center">
-									<img :src="bonus.acfLogo_image_array[0]" alt="">	
+									<img :src="bonus.acfLogo_image_array[0]" alt="" class="mw-100">	
 								</div>
 							</div>
 							<div class="ratio ratio-3x4 mb-15 d-md-none" style="background-color: #323082; border-radius: 10px; width: 100px;">
@@ -65,7 +65,7 @@ get_header();
 									alt=""
 									/>
 								</div>
-								<div class="mt-10 d-block d-md-none fs-12 text-white ps-10">
+								<div class="mt-10 d-block d-md-none fs-12 text-white ps-10 text-nowrap">
 									{{bonus.associatedCasinoTitle}} casino
 								</div>
 							</div>

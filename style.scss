@@ -562,3 +562,20 @@ input[type="checkbox"] {
 	width: 24px !important;
 	height: 24px !important;
 }
+
+/* Hide Google reCaptcha after 1s */
+@keyframes hide_after_1s {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100px);
+    }
+}
+
+.grecaptcha-badge {
+    animation-name: hide_after_1s;
+    animation-delay: 3s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
